@@ -24,10 +24,23 @@
   --border: var(--icv-mid-grey);
   --heading: var(--icv-black);
 
-  /* Alert / Islamophobia Support */
-  --alert-bg: #FFF8E1;
-  --alert-border: #F9A825;
-  --alert-text: #5D4037;
+  /* Ramadan Branding */
+  --ram-bg: #1A2E1A;
+  --ram-surface: #233523;
+  --ram-border: #2E4A2E;
+  --ram-gold: #D4A843;
+  --ram-gold-dim: #B8923A;
+  --ram-text: #E8E4DD;
+  --ram-text-muted: #A8A298;
+
+  /* Islamophobia Support Branding */
+  --iso-bg: #F5E1B0;
+  --iso-bg-deep: #EDCF8B;
+  --iso-accent: #C98A1B;
+  --iso-accent-dark: #A06E10;
+  --iso-text: #4A3520;
+  --iso-text-muted: #7A6248;
+  --iso-highlight: #E8A830;
 }
 
 @theme inline {
@@ -47,9 +60,20 @@
   --color-icv-black: var(--icv-black);
   --color-icv-light-grey: var(--icv-light-grey);
   --color-icv-mid-grey: var(--icv-mid-grey);
-  --color-alert-bg: var(--alert-bg);
-  --color-alert-border: var(--alert-border);
-  --color-alert-text: var(--alert-text);
+  --color-ram-bg: var(--ram-bg);
+  --color-ram-surface: var(--ram-surface);
+  --color-ram-border: var(--ram-border);
+  --color-ram-gold: var(--ram-gold);
+  --color-ram-gold-dim: var(--ram-gold-dim);
+  --color-ram-text: var(--ram-text);
+  --color-ram-text-muted: var(--ram-text-muted);
+  --color-iso-bg: var(--iso-bg);
+  --color-iso-bg-deep: var(--iso-bg-deep);
+  --color-iso-accent: var(--iso-accent);
+  --color-iso-accent-dark: var(--iso-accent-dark);
+  --color-iso-text: var(--iso-text);
+  --color-iso-text-muted: var(--iso-text-muted);
+  --color-iso-highlight: var(--iso-highlight);
   --font-sans: var(--font-inter);
 }
 

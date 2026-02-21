@@ -1,63 +1,91 @@
-const services = [
+import {
+  Landmark,
+  Users,
+  Megaphone,
+  ShieldAlert,
+  HandCoins,
+  HeartHandshake,
+  Apple,
+  Stethoscope,
+  Scale,
+  Link2,
+  Vote,
+  GraduationCap,
+  type LucideIcon,
+} from "lucide-react";
+
+const services: { title: string; description: string; href: string; icon: LucideIcon }[] = [
   {
     title: "ICV City Mosque",
     description: "Daily Prayer Services",
     href: "/services/city-mosque",
+    icon: Landmark,
   },
   {
     title: "Member Society Engagement",
     description: "Representation & Engagement",
     href: "/services/member-engagement",
+    icon: Users,
   },
   {
     title: "Advocacy",
     description: "Protecting The Communities Rights",
     href: "/advocacy",
+    icon: Megaphone,
   },
   {
     title: "Islamophobia Services",
     description: "Direct Case Support Against Racism",
     href: "/islamophobia-support",
+    icon: ShieldAlert,
   },
   {
     title: "Interest Free Loans",
     description: "Financial Relief To Those In Need",
     href: "/services/interest-free-loans",
+    icon: HandCoins,
   },
   {
     title: "Family Violence Program",
     description: "Educational Family Matters Service",
     href: "/services/family-violence-program",
+    icon: HeartHandshake,
   },
   {
     title: "Food Hamper Program",
     description: "Food Relief To Families & Individuals",
     href: "/services/food-hamper-program",
+    icon: Apple,
   },
   {
     title: "Hospital Chaplaincy Program",
     description: "Supporting Those In Need",
     href: "/services/hospital-chaplaincy",
+    icon: Stethoscope,
   },
   {
     title: "Prison & Youth Chaplaincy",
     description: "Rehabilitating Individuals",
     href: "/services/prison-youth-chaplaincy",
+    icon: Scale,
   },
   {
     title: "Muslim Connect Program",
     description: "Pre & Post Release Rehabilitation",
     href: "/services/muslim-connect",
+    icon: Link2,
   },
   {
     title: "My Vote Matters Program",
     description: "Insight Into Political Positions",
     href: "/services/my-vote-matters",
+    icon: Vote,
   },
   {
     title: "Scholarships Programs",
     description: "Building Capacity & Support",
     href: "/services/scholarships",
+    icon: GraduationCap,
   },
 ];
 
@@ -104,37 +132,42 @@ export default function ServicesGrid() {
           </form>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-px bg-gray-200 border border-gray-200 rounded">
-          {services.map((service) => (
-            <a
-              key={service.title}
-              href={service.href}
-              className="group flex items-start gap-5 bg-white p-6 md:p-7 transition-colors hover:bg-gray-50"
-            >
-              <div className="w-1 self-stretch bg-icv-green rounded-full shrink-0" />
-              <div className="flex-1 min-w-0">
-                <h3 className="text-lg md:text-xl font-semibold text-heading group-hover:text-icv-green-dark transition-colors">
-                  {service.title}
-                </h3>
-                <p className="text-base text-foreground/55 mt-1.5">
-                  {service.description}
-                </p>
-              </div>
-              <svg
-                className="w-5 h-5 text-gray-300 group-hover:text-icv-green mt-1 shrink-0 transition-colors"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                viewBox="0 0 24 24"
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2">
+          {services.map((service) => {
+            const Icon = service.icon;
+            return (
+              <a
+                key={service.title}
+                href={service.href}
+                className="group flex items-start gap-4 bg-white border border-gray-200 rounded p-5 md:p-6 transition-colors hover:bg-gray-50"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </a>
-          ))}
+                <div className="w-10 h-10 rounded bg-icv-green/10 flex items-center justify-center shrink-0">
+                  <Icon className="w-5 h-5 text-icv-green" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-lg font-semibold text-heading group-hover:text-icv-green-dark transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-foreground/55 mt-1">
+                    {service.description}
+                  </p>
+                </div>
+                <svg
+                  className="w-5 h-5 text-gray-300 group-hover:text-icv-green mt-1 shrink-0 transition-colors"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </a>
+            );
+          })}
         </div>
       </div>
     </section>
