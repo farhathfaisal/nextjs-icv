@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+:root {
+  /* ICV Brand Colors - Neutrals */
+  --icv-white: #ffffff;
+  --icv-light-grey: #E5E6E2;
+  --icv-mid-grey: #BFC0BD;
+  --icv-charcoal: #282828;
+  --icv-black: #171717;
+
+  /* ICV Brand Colors - Greens */
+  --icv-green-primary: #69B338;
+  --icv-green-dark: #61A633;
+  --icv-green-light: #8FC942;
+  --icv-green-medium: #73B83B;
+
+  /* Semantic */
+  --background: var(--icv-white);
+  --foreground: var(--icv-charcoal);
+  --accent: var(--icv-green-primary);
+  --accent-hover: var(--icv-green-dark);
+  --accent-light: var(--icv-green-light);
+  --surface: var(--icv-light-grey);
+  --border: var(--icv-mid-grey);
+  --heading: var(--icv-black);
+
+  /* Alert / Islamophobia Support */
+  --alert-bg: #FFF8E1;
+  --alert-border: #F9A825;
+  --alert-text: #5D4037;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-light: var(--accent-light);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-heading: var(--heading);
+  --color-icv-green: var(--icv-green-primary);
+  --color-icv-green-dark: var(--icv-green-dark);
+  --color-icv-green-light: var(--icv-green-light);
+  --color-icv-green-medium: var(--icv-green-medium);
+  --color-icv-charcoal: var(--icv-charcoal);
+  --color-icv-black: var(--icv-black);
+  --color-icv-light-grey: var(--icv-light-grey);
+  --color-icv-mid-grey: var(--icv-mid-grey);
+  --color-alert-bg: var(--alert-bg);
+  --color-alert-border: var(--alert-border);
+  --color-alert-text: var(--alert-text);
+  --font-sans: var(--font-inter);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+}
+
+/* Fluid full-width sections */
+.section-full {
+  width: 100%;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .section-full {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .section-full {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
