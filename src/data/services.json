@@ -1,0 +1,619 @@
+{
+  "questions": [
+    {
+      "id": "start",
+      "title": "Who is this for?",
+      "subtitle": "Let us know so we can tailor the results.",
+      "options": [
+        {
+          "id": "for-client",
+          "label": "A client or consumer",
+          "description": "I'm a worker looking for services on behalf of someone",
+          "icon": "Users",
+          "next": "what-help"
+        },
+        {
+          "id": "for-myself",
+          "label": "Myself",
+          "description": "I'm looking for support for myself",
+          "icon": "HeartHandshake",
+          "next": "what-help"
+        },
+        {
+          "id": "for-someone-else",
+          "label": "A friend or family member",
+          "description": "I'm looking for services to help someone I know",
+          "icon": "Link2",
+          "next": "what-help"
+        }
+      ]
+    },
+    {
+      "id": "what-help",
+      "title": "What do you need help with?",
+      "subtitle": "Choose the area that best describes the situation.",
+      "options": [
+        {
+          "id": "food-money",
+          "label": "Food or money",
+          "description": "Food relief, financial support, or interest-free loans",
+          "icon": "HandCoins",
+          "next": "food-money-detail"
+        },
+        {
+          "id": "family",
+          "label": "Family & safety",
+          "description": "Family violence support, counselling, or referrals",
+          "icon": "HeartHandshake",
+          "services": ["family-violence-program", "family-violence-anglicare", "family-violence-uniting"]
+        },
+        {
+          "id": "discrimination",
+          "label": "Racism or Islamophobia",
+          "description": "Report an incident or get case support",
+          "icon": "ShieldAlert",
+          "services": ["islamophobia-services", "victorian-equal-opportunity", "islamic-counselling"]
+        },
+        {
+          "id": "rights",
+          "label": "Rights & advocacy",
+          "description": "Legal help, policy advocacy, or civic engagement",
+          "icon": "Megaphone",
+          "next": "rights-detail"
+        },
+        {
+          "id": "health",
+          "label": "Health & wellbeing",
+          "description": "Hospital chaplaincy or pastoral support",
+          "icon": "Stethoscope",
+          "services": ["hospital-chaplaincy", "cohealth-mental", "djerriwarrh-health"]
+        },
+        {
+          "id": "chaplaincy",
+          "label": "Prison or rehabilitation",
+          "description": "Chaplaincy, rehabilitation, or reintegration support",
+          "icon": "Scale",
+          "next": "chaplaincy-detail"
+        },
+        {
+          "id": "education",
+          "label": "Education & scholarships",
+          "description": "Scholarship programs and capacity building",
+          "icon": "GraduationCap",
+          "services": ["scholarships", "academy-australia", "skills-first-vic"]
+        },
+        {
+          "id": "community",
+          "label": "Community & mosque",
+          "description": "Prayer services, member societies, or community programs",
+          "icon": "Users",
+          "next": "community-detail"
+        }
+      ]
+    },
+    {
+      "id": "food-money-detail",
+      "title": "What kind of support do you need?",
+      "options": [
+        {
+          "id": "food",
+          "label": "Food assistance",
+          "description": "Food hampers and emergency food relief",
+          "icon": "Apple",
+          "services": ["food-hamper-program", "salvos-craigieburn", "salvos-doorways", "anglicare-craigieburn", "latin-stories", "salvos-broadford"]
+        },
+        {
+          "id": "financial",
+          "label": "Financial help",
+          "description": "Interest-free loans for essential expenses",
+          "icon": "HandCoins",
+          "services": ["interest-free-loans", "bravery-trust", "nils-goodshep", "anglicare-financial"]
+        }
+      ]
+    },
+    {
+      "id": "rights-detail",
+      "title": "What area of rights or advocacy?",
+      "options": [
+        {
+          "id": "advocacy",
+          "label": "Policy & advocacy",
+          "description": "Community rights, policy submissions, and government engagement",
+          "icon": "Megaphone",
+          "services": ["advocacy"]
+        },
+        {
+          "id": "voting",
+          "label": "Voting & elections",
+          "description": "Non-partisan voter education and political engagement",
+          "icon": "Vote",
+          "services": ["my-vote-matters"]
+        }
+      ]
+    },
+    {
+      "id": "chaplaincy-detail",
+      "title": "What kind of support?",
+      "options": [
+        {
+          "id": "prison",
+          "label": "Prison & youth chaplaincy",
+          "description": "Spiritual guidance and rehabilitation in correctional facilities",
+          "icon": "Scale",
+          "services": ["prison-youth-chaplaincy"]
+        },
+        {
+          "id": "reintegration",
+          "label": "Post-release support",
+          "description": "Mentoring, housing, and employment after release",
+          "icon": "Link2",
+          "services": ["muslim-connect"]
+        }
+      ]
+    },
+    {
+      "id": "community-detail",
+      "title": "What are you looking for?",
+      "options": [
+        {
+          "id": "mosque",
+          "label": "Prayer services",
+          "description": "Daily prayers, Jummah, and Eid at ICV City Mosque",
+          "icon": "Landmark",
+          "services": ["city-mosque"]
+        },
+        {
+          "id": "member",
+          "label": "Member societies",
+          "description": "Connect with ICV's 70+ member organisations",
+          "icon": "Users",
+          "services": ["member-engagement"]
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "id": "food-hamper-program",
+      "name": "Food Hamper Program",
+      "organisation": "Islamic Council of Victoria",
+      "description": "The Food Hamper Program provides essential food relief to families and individuals experiencing food insecurity. Hampers include culturally appropriate halal food items and essential groceries. Emergency hampers are available on request.",
+      "phone": "(03) 9328 2067",
+      "email": "foodrelief@icv.org.au",
+      "location": "West Melbourne",
+      "address": "66-68 Jeffcott Street, West Melbourne VIC 3003",
+      "eligibility": "Available to individuals and families in need within Victoria. No documentation required for emergency hampers.",
+      "eligibilityList": [
+        "Located in Metropolitan Melbourne and regional Victoria.",
+        "Individuals and families experiencing food insecurity.",
+        "No documentation required for emergency hampers.",
+        "Referred by Self or agency."
+      ],
+      "hours": "Distribution events held monthly. Emergency hampers available weekdays 9 AM – 5 PM.",
+      "status": "Open now until 5:00 PM",
+      "tags": ["Food parcels", "Halal food", "Emergency relief"],
+      "accessibility": "Full wheelchair access"
+    },
+    {
+      "id": "salvos-craigieburn",
+      "name": "Emergency Relief",
+      "organisation": "Salvation Army Craigieburn Corps",
+      "description": "Emergency relief is available for individuals and families experiencing hardship. Aid includes food vouchers and food hampers. Support is provided via the emergency assistance telephone line.",
+      "phone": "(03) 9305 1975",
+      "location": "Craigieburn",
+      "address": "5 Waterview Boulevard, Craigieburn VIC 3064",
+      "status": "Wednesday from 9:00 AM until 4:00 PM (Emergency Assistance Line.)",
+      "tags": ["Food parcels", "Food vouchers"],
+      "eligibilityList": [
+        "Located in Hume local government area.",
+        "Individuals and families experiencing hardship.",
+        "Must provide proof of identification and Health Care Card.",
+        "Assistance is only provided in emergencies and following an assessment interview.",
+        "Referred by Self or agency."
+      ],
+      "accessibility": "Full wheelchair access"
+    },
+    {
+      "id": "salvos-doorways",
+      "name": "Doorways Emergency Relief",
+      "organisation": "Salvation Army, Craigieburn Doorways Community Support Services",
+      "description": "Doorways provides emergency relief and holistic case management, with referral to internal and external support services, for singles and families experiencing disadvantage.",
+      "phone": "(03) 9308 7910",
+      "location": "Craigieburn",
+      "address": "7 Waterview Boulevard, Craigieburn VIC 3064",
+      "status": "Closed until tomorrow 9:30 AM",
+      "tags": ["Food parcels", "Food vouchers"],
+      "eligibilityList": [
+        "Located in Attwood, Broadmeadows, Campbellfield, Coolaroo, Craigieburn, Dallas, Gladstone Park, Greenvale, Meadow Heights, Roxburgh Park, Westmeadows, Somerton and Yuroke.",
+        "Individuals and families experiencing disadvantage.",
+        "Referred by Self or agency."
+      ],
+      "accessibility": "Full wheelchair access"
+    },
+    {
+      "id": "anglicare-craigieburn",
+      "name": "Emergency Relief",
+      "organisation": "Anglicare Victoria, Craigieburn Emergency Relief",
+      "description": "Emergency relief is available for individuals and families experiencing financial hardship. Aid includes food parcels, food vouchers, fuel vouchers and financial assistance for prescription medications.",
+      "phone": "(03) 9308 7100",
+      "location": "Craigieburn",
+      "address": "59 Craigieburn Road, Craigieburn VIC 3064",
+      "status": "Closed until tomorrow 10:00 AM",
+      "tags": ["Food parcels", "Food vouchers"],
+      "eligibilityList": [
+        "Located in Postcodes 3063, 3064 and 3756 which includes Oaklands Junction, Yuroke, Craigieburn, Donnybrook, Kalkallo, Wallan, Upper Plenty, Darraweit Guim and Chintin in the Hume, Mitchell and Macedon Ranges local government areas.",
+        "People experiencing financial hardship living in postcodes 3063, 3064 and 3756."
+      ]
+    },
+    {
+      "id": "latin-stories",
+      "name": "Emergency Relief: Food Vouchers",
+      "organisation": "Latin Stories Australia",
+      "description": "Emergency relief is available for individuals and families from the Latin American ethnic community who are experiencing disadvantage. Aid includes food vouchers. Referrals to other services may also be provided.",
+      "phone": "(03) 9077 7610",
+      "location": "Melbourne",
+      "address": "Level 2, 108 Elizabeth Street, Melbourne VIC 3000",
+      "status": "Contact for opening hours.",
+      "tags": ["Food vouchers"],
+      "eligibilityList": [
+        "Located in Metropolitan Melbourne.",
+        "Individuals and families from the Latin American community experiencing disadvantage."
+      ]
+    },
+    {
+      "id": "bravery-trust",
+      "name": "Financial Aid",
+      "organisation": "Bravery Trust",
+      "description": "Provides financial aid for current and former Australian Defence Force (ADF) members and their families who are experiencing financial hardship. Support includes emergency financial assistance, budgeting help, and referrals to specialist services.",
+      "phone": "1300 272 839",
+      "location": "Confidential Location",
+      "status": "Open now until 5:00 PM",
+      "tags": ["Food vouchers", "Financial aid"],
+      "eligibilityList": [
+        "Located in Australia.",
+        "Australian Defence Force (ADF) members and their families who are experiencing financial hardship.",
+        "Referred by Self, family or agency."
+      ]
+    },
+    {
+      "id": "salvos-broadford",
+      "name": "Emergency Relief",
+      "organisation": "Mitchell Shire Salvos: Broadford Cps",
+      "description": "Emergency relief is available for individuals and families experiencing disadvantage. Aid includes food vouchers and other vouchers which are available upon assessment.",
+      "phone": "(03) 5784 1458",
+      "location": "Broadford",
+      "address": "21 High Street, Broadford VIC 3658",
+      "status": "Closed until tomorrow 9:00 AM",
+      "tags": ["Food vouchers"],
+      "eligibilityList": [
+        "Located in Broadford and district.",
+        "Individuals and families experiencing disadvantage.",
+        "Referred by Self or agency."
+      ]
+    },
+    {
+      "id": "interest-free-loans",
+      "name": "Interest Free Loans",
+      "organisation": "Islamic Council of Victoria",
+      "description": "Interest-free loans to help individuals and families cover essential expenses such as rent, utilities, medical costs, and education fees. Loans are provided in accordance with Islamic principles.",
+      "phone": "(03) 9328 2067",
+      "email": "loans@icv.org.au",
+      "location": "West Melbourne",
+      "address": "66-68 Jeffcott Street, West Melbourne VIC 3003",
+      "eligibility": "Victorian residents experiencing financial hardship. Proof of income and identity required.",
+      "eligibilityList": [
+        "Victorian residents experiencing financial hardship.",
+        "Proof of income and identity required.",
+        "Must be able to demonstrate capacity to repay.",
+        "Referred by Self."
+      ],
+      "status": "Open now until 5:00 PM",
+      "tags": ["Interest-free loans", "Financial assistance"]
+    },
+    {
+      "id": "nils-goodshep",
+      "name": "No Interest Loan Scheme (NILS)",
+      "organisation": "Good Shepherd Microfinance",
+      "description": "No Interest Loans of up to $2,000 for essential goods and services including whitegoods, furniture, education costs, medical expenses, and car repairs. Loans are interest-free and fee-free.",
+      "phone": "13 64 57",
+      "location": "Collingwood",
+      "address": "117 Johnston Street, Collingwood VIC 3066",
+      "status": "Open now until 5:00 PM",
+      "tags": ["Interest-free loans", "Essential goods"],
+      "eligibilityList": [
+        "Must hold a Health Care Card or Pension Card.",
+        "Must have lived at current address for at least 3 months.",
+        "Individual or combined household income under $70,000 per year.",
+        "Referred by Self."
+      ],
+      "accessibility": "Full wheelchair access"
+    },
+    {
+      "id": "anglicare-financial",
+      "name": "Financial Counselling",
+      "organisation": "Anglicare Victoria, Financial Counselling Services",
+      "description": "Free financial counselling for people experiencing financial difficulty. Support includes budgeting advice, negotiating with creditors, understanding rights and options, and referrals to emergency relief and other services.",
+      "phone": "(03) 9412 6133",
+      "location": "Box Hill",
+      "address": "Suite 6, 1 Whitehorse Road, Box Hill VIC 3128",
+      "status": "Closed until Monday 9:00 AM",
+      "tags": ["Financial counselling", "Budgeting support"],
+      "eligibilityList": [
+        "Located in Eastern Metropolitan Melbourne.",
+        "Individuals experiencing financial difficulty.",
+        "Referred by Self or agency."
+      ],
+      "accessibility": "Full wheelchair access"
+    },
+    {
+      "id": "family-violence-program",
+      "name": "Family Violence Program",
+      "organisation": "Islamic Council of Victoria",
+      "description": "Culturally appropriate education, support, and referral services for families affected by family violence. The program provides early intervention and connects people with specialist support services.",
+      "phone": "(03) 9328 2067",
+      "email": "familyservices@icv.org.au",
+      "location": "West Melbourne",
+      "address": "66-68 Jeffcott Street, West Melbourne VIC 3003",
+      "eligibility": "Open to all community members. Confidential service.",
+      "eligibilityList": [
+        "Open to all community members.",
+        "Confidential service.",
+        "Culturally and linguistically diverse communities.",
+        "Referred by Self, family, or agency."
+      ],
+      "status": "Open now until 5:00 PM",
+      "tags": ["Family violence support", "Counselling", "Referrals"],
+      "accessibility": "Full wheelchair access"
+    },
+    {
+      "id": "family-violence-anglicare",
+      "name": "Family Violence Response",
+      "organisation": "Anglicare Victoria, Family Violence Services",
+      "description": "Specialist family violence support including crisis response, safety planning, case management, and court support. Provides culturally responsive services and can connect with interpreter services.",
+      "phone": "1800 015 188",
+      "location": "Melbourne",
+      "address": "Level 1, 140 Queen Street, Melbourne VIC 3000",
+      "status": "24/7 crisis line available",
+      "tags": ["Crisis support", "Safety planning", "Court support"],
+      "eligibilityList": [
+        "Located in Metropolitan Melbourne.",
+        "Women, children and families experiencing family violence.",
+        "Men seeking support to change their behaviour.",
+        "Referred by Self, police, or agency."
+      ],
+      "accessibility": "Full wheelchair access"
+    },
+    {
+      "id": "family-violence-uniting",
+      "name": "Family Violence Outreach",
+      "organisation": "Uniting Vic.Tas, Family Services",
+      "description": "Community-based family violence outreach providing case management, risk assessment, safety planning, and connections to housing, legal, and financial support services.",
+      "phone": "(03) 9192 8100",
+      "location": "Brunswick",
+      "address": "132 Sydney Road, Brunswick VIC 3056",
+      "status": "Closed until Monday 9:00 AM",
+      "tags": ["Case management", "Safety planning", "Housing referrals"],
+      "eligibilityList": [
+        "Located in Northern Metropolitan Melbourne.",
+        "Individuals and families experiencing or at risk of family violence.",
+        "Referred by Self or agency."
+      ]
+    },
+    {
+      "id": "islamophobia-services",
+      "name": "Islamophobia Services",
+      "organisation": "Islamic Council of Victoria",
+      "description": "Direct case support for individuals who have experienced Islamophobia, racism, or religious discrimination. We provide confidential case management, legal referrals, counselling support, and help with reporting to authorities.",
+      "phone": "1800 123 456",
+      "email": "islamophobia@icv.org.au",
+      "website": "https://www.icv.org.au/islamophobia-support",
+      "location": "West Melbourne",
+      "address": "66-68 Jeffcott Street, West Melbourne VIC 3003",
+      "status": "Open now until 5:00 PM",
+      "tags": ["Discrimination support", "Legal referrals", "Case management"],
+      "eligibilityList": [
+        "Open to anyone who has experienced Islamophobia or religious discrimination in Victoria.",
+        "Confidential service.",
+        "Referred by Self."
+      ]
+    },
+    {
+      "id": "victorian-equal-opportunity",
+      "name": "Discrimination Enquiry Line",
+      "organisation": "Victorian Equal Opportunity & Human Rights Commission",
+      "description": "Free, confidential service to discuss experiences of discrimination, sexual harassment, victimisation or racial or religious vilification. Can assist with making a formal complaint and provides information about rights under the Equal Opportunity Act.",
+      "phone": "1300 292 153",
+      "location": "Melbourne",
+      "address": "Level 3, 204 Lygon Street, Carlton VIC 3053",
+      "status": "Open now until 5:00 PM",
+      "tags": ["Discrimination complaints", "Legal information", "Vilification"],
+      "eligibilityList": [
+        "Located in Victoria.",
+        "Anyone who has experienced discrimination, harassment, or vilification.",
+        "Referred by Self."
+      ],
+      "accessibility": "Full wheelchair access"
+    },
+    {
+      "id": "islamic-counselling",
+      "name": "Islamic Counselling Services",
+      "organisation": "Australian Muslim Women's Centre for Human Rights",
+      "description": "Culturally and religiously sensitive counselling for Muslim individuals affected by racism, discrimination, or community-based trauma. Counsellors understand the specific impacts of Islamophobia and provide a safe space for healing.",
+      "phone": "(03) 9481 3000",
+      "location": "Northcote",
+      "address": "143 High Street, Northcote VIC 3070",
+      "status": "Closed until Monday 10:00 AM",
+      "tags": ["Counselling", "Culturally sensitive", "Trauma support"],
+      "eligibilityList": [
+        "Muslim individuals in Victoria.",
+        "Women, men, and young people.",
+        "Referred by Self or agency."
+      ]
+    },
+    {
+      "id": "cohealth-mental",
+      "name": "Mental Health & Wellbeing Services",
+      "organisation": "cohealth, Mental Health Program",
+      "description": "Community-based mental health support including counselling, group programs, and clinical services. Provides culturally responsive care with access to interpreters and bilingual staff.",
+      "phone": "(03) 9448 5511",
+      "location": "Footscray",
+      "address": "12 Lennox Street, Footscray VIC 3011",
+      "status": "Open now until 6:00 PM",
+      "tags": ["Mental health", "Counselling", "Group programs"],
+      "eligibilityList": [
+        "Located in Western Metropolitan Melbourne.",
+        "Adults experiencing mental health concerns.",
+        "No referral needed for initial assessment.",
+        "Referred by Self, GP, or agency."
+      ],
+      "accessibility": "Full wheelchair access"
+    },
+    {
+      "id": "djerriwarrh-health",
+      "name": "Community Health & Wellbeing",
+      "organisation": "Djerriwarrh Health Services",
+      "description": "Comprehensive health services including counselling, allied health, chronic disease management, and community health programs. Provides culturally safe care for diverse communities in Melbourne's west.",
+      "phone": "(03) 8746 1600",
+      "location": "Melton",
+      "address": "195-209 Barries Road, Melton VIC 3337",
+      "status": "Closed until Monday 8:30 AM",
+      "tags": ["Community health", "Allied health", "Chronic disease"],
+      "eligibilityList": [
+        "Located in Melton, Bacchus Marsh, and surrounding areas.",
+        "Individuals and families.",
+        "Referred by Self or GP."
+      ],
+      "accessibility": "Full wheelchair access"
+    },
+    {
+      "id": "advocacy",
+      "name": "Advocacy",
+      "organisation": "Islamic Council of Victoria",
+      "description": "ICV advocates for the rights of the Victorian Muslim community through government engagement at all levels, policy submissions, media responses, and representation on issues including discrimination, religious freedom, and social inclusion.",
+      "phone": "(03) 9328 2067",
+      "email": "advocacy@icv.org.au",
+      "location": "West Melbourne",
+      "status": "Open now until 5:00 PM",
+      "tags": ["Policy advocacy", "Government engagement"]
+    },
+    {
+      "id": "hospital-chaplaincy",
+      "name": "Hospital Chaplaincy Program",
+      "organisation": "Islamic Council of Victoria",
+      "description": "Spiritual and pastoral care for Muslim patients in hospitals across Victoria. Trained chaplains offer emotional support, prayer, religious guidance, and practical assistance to patients and their families.",
+      "phone": "(03) 9328 2067",
+      "email": "chaplaincy@icv.org.au",
+      "location": "West Melbourne",
+      "status": "Available 24/7 for urgent requests",
+      "tags": ["Pastoral care", "Spiritual support", "Hospital visits"]
+    },
+    {
+      "id": "prison-youth-chaplaincy",
+      "name": "Prison & Youth Chaplaincy",
+      "organisation": "Islamic Council of Victoria",
+      "description": "Spiritual guidance, counselling, and rehabilitation support for Muslim individuals in correctional facilities across Victoria. Our chaplains work with both adult and youth offenders.",
+      "phone": "(03) 9328 2067",
+      "email": "chaplaincy@icv.org.au",
+      "location": "West Melbourne",
+      "tags": ["Chaplaincy", "Rehabilitation", "Spiritual guidance"]
+    },
+    {
+      "id": "muslim-connect",
+      "name": "Muslim Connect Program",
+      "organisation": "Islamic Council of Victoria",
+      "description": "Support for individuals transitioning from correctional facilities back into the community. Includes pre-release planning, post-release mentoring, housing assistance, and employment support.",
+      "phone": "(03) 9328 2067",
+      "email": "muslimconnect@icv.org.au",
+      "location": "West Melbourne",
+      "eligibility": "Muslim individuals in or exiting correctional facilities in Victoria.",
+      "eligibilityList": [
+        "Muslim individuals in or exiting correctional facilities in Victoria.",
+        "Pre- and post-release support.",
+        "Referred by Corrections Victoria or self."
+      ],
+      "tags": ["Post-release support", "Mentoring", "Employment"]
+    },
+    {
+      "id": "my-vote-matters",
+      "name": "My Vote Matters Program",
+      "organisation": "Islamic Council of Victoria",
+      "description": "Non-partisan voter education providing information about political parties' positions on issues relevant to the Muslim community, voter education resources, and opportunities to engage with elected representatives.",
+      "website": "https://www.icv.org.au/my-vote-matters",
+      "location": "Victoria-wide",
+      "tags": ["Voter education", "Civic engagement"]
+    },
+    {
+      "id": "scholarships",
+      "name": "Scholarships Programs",
+      "organisation": "Islamic Council of Victoria",
+      "description": "Scholarships for Victorian Muslim students pursuing higher education and professional development. Available for undergraduate and postgraduate studies across a range of disciplines.",
+      "email": "scholarships@icv.org.au",
+      "location": "West Melbourne",
+      "eligibility": "Victorian Muslim students enrolled in or applying to accredited educational institutions.",
+      "eligibilityList": [
+        "Victorian Muslim students.",
+        "Enrolled in or applying to accredited educational institutions.",
+        "Undergraduate and postgraduate studies.",
+        "Referred by Self."
+      ],
+      "tags": ["Scholarships", "Higher education"]
+    },
+    {
+      "id": "academy-australia",
+      "name": "Skills & Training Programs",
+      "organisation": "Academy Australia",
+      "description": "Vocational training and skills development programs including Certificate and Diploma courses. Specialises in community services, aged care, disability, and early childhood education with culturally inclusive delivery.",
+      "phone": "(03) 9077 0470",
+      "location": "Melbourne",
+      "address": "Level 5, 601 Bourke Street, Melbourne VIC 3000",
+      "status": "Open now until 5:00 PM",
+      "tags": ["Vocational training", "Skills development", "Certificates"],
+      "eligibilityList": [
+        "Located in Victoria.",
+        "Australian citizens, permanent residents, and eligible visa holders.",
+        "Government-subsidised places available for eligible students.",
+        "Referred by Self."
+      ]
+    },
+    {
+      "id": "skills-first-vic",
+      "name": "Skills First — Free TAFE",
+      "organisation": "Victorian Government, Department of Education",
+      "description": "Free TAFE courses and subsidised training across hundreds of courses. Priority courses include community services, health, early childhood, IT, and trades. Fee-free for eligible students.",
+      "phone": "1300 722 603",
+      "website": "https://www.skills.vic.gov.au",
+      "location": "Victoria-wide",
+      "status": "Enquiry line open weekdays 9:00 AM – 5:00 PM",
+      "tags": ["Free TAFE", "Subsidised training", "Vocational education"],
+      "eligibilityList": [
+        "Victorian residents.",
+        "Australian citizens, permanent residents, and eligible visa holders.",
+        "Free TAFE for priority courses.",
+        "Referred by Self."
+      ]
+    },
+    {
+      "id": "city-mosque",
+      "name": "ICV City Mosque",
+      "organisation": "Islamic Council of Victoria",
+      "description": "The ICV City Mosque provides daily prayer services for the Melbourne CBD community including five daily prayers, Jummah (Friday) prayers, Taraweeh during Ramadan, and Eid prayers.",
+      "phone": "(03) 9328 2067",
+      "address": "66-68 Jeffcott Street, West Melbourne VIC 3003",
+      "location": "West Melbourne",
+      "hours": "Open daily for five prayer times. Jummah: 1:15 PM & 1:45 PM.",
+      "status": "Open for Dhuhr prayer at 1:15 PM",
+      "tags": ["Daily prayers", "Jummah", "Eid prayers"],
+      "accessibility": "Full wheelchair access"
+    },
+    {
+      "id": "member-engagement",
+      "name": "Member Society Engagement",
+      "organisation": "Islamic Council of Victoria",
+      "description": "ICV connects and supports 70+ member societies across Victoria through regular consultations, capacity-building workshops, and resource sharing.",
+      "phone": "(03) 9328 2067",
+      "email": "members@icv.org.au",
+      "location": "West Melbourne",
+      "tags": ["Member societies", "Community support"]
+    }
+  ]
+}

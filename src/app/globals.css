@@ -1,47 +1,5 @@
+@import "../styles/design-tokens.css";
 @import "tailwindcss";
-
-:root {
-  /* ICV Brand Colors - Neutrals */
-  --icv-white: #ffffff;
-  --icv-light-grey: #E5E6E2;
-  --icv-mid-grey: #BFC0BD;
-  --icv-charcoal: #282828;
-  --icv-black: #171717;
-
-  /* ICV Brand Colors - Greens */
-  --icv-green-primary: #69B338;
-  --icv-green-dark: #61A633;
-  --icv-green-light: #8FC942;
-  --icv-green-medium: #73B83B;
-
-  /* Semantic */
-  --background: var(--icv-white);
-  --foreground: var(--icv-charcoal);
-  --accent: var(--icv-green-primary);
-  --accent-hover: var(--icv-green-dark);
-  --accent-light: var(--icv-green-light);
-  --surface: var(--icv-light-grey);
-  --border: var(--icv-mid-grey);
-  --heading: var(--icv-black);
-
-  /* Ramadan Branding */
-  --ram-bg: #1A2E1A;
-  --ram-surface: #233523;
-  --ram-border: #2E4A2E;
-  --ram-gold: #D4A843;
-  --ram-gold-dim: #B8923A;
-  --ram-text: #E8E4DD;
-  --ram-text-muted: #A8A298;
-
-  /* Islamophobia Support Branding */
-  --iso-bg: #F5E1B0;
-  --iso-bg-deep: #EDCF8B;
-  --iso-accent: #C98A1B;
-  --iso-accent-dark: #A06E10;
-  --iso-text: #4A3520;
-  --iso-text-muted: #7A6248;
-  --iso-highlight: #E8A830;
-}
 
 @theme inline {
   --color-background: var(--background);
@@ -52,10 +10,10 @@
   --color-surface: var(--surface);
   --color-border: var(--border);
   --color-heading: var(--heading);
-  --color-icv-green: var(--icv-green-primary);
-  --color-icv-green-dark: var(--icv-green-dark);
-  --color-icv-green-light: var(--icv-green-light);
-  --color-icv-green-medium: var(--icv-green-medium);
+  --color-icv-green: #69B338;
+  --color-icv-green-dark: #5a9e2f;
+  --color-icv-green-light: #e8f5d6;
+  --color-icv-green-medium: #4a8a26;
   --color-icv-charcoal: var(--icv-charcoal);
   --color-icv-black: var(--icv-black);
   --color-icv-light-grey: var(--icv-light-grey);
@@ -83,23 +41,100 @@ body {
   font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
 }
 
-/* Fluid full-width sections */
+/* Ensure all interactive elements show pointer cursor */
+a, button, [role="button"], input[type="submit"], input[type="button"], select, summary {
+  cursor: pointer;
+}
+
+/*
+ * .section-full — Shared container pattern
+ * Provides a centered, max-width container with responsive horizontal padding.
+ * Used by all page sections and header rows to maintain consistent alignment.
+ * Tokens: --container-max, --container-padding-sm/md/lg (from design-tokens.css)
+ */
 .section-full {
   width: 100%;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
+  max-width: var(--container-max);
+  margin: auto;
+  padding-left: var(--container-padding-sm);
+  padding-right: var(--container-padding-sm);
 }
 
 @media (min-width: 768px) {
   .section-full {
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: var(--container-padding-md);
+    padding-right: var(--container-padding-md);
   }
 }
 
 @media (min-width: 1280px) {
   .section-full {
-    padding-left: 5rem;
+    padding-left: var(--container-padding-lg);
+    padding-right: var(--container-padding-lg);
+  }
+}
+
+/*
+ * .section-split-left — Left column of a full-width split layout.
+ * Matches .section-full left padding so content aligns with the page container,
+ * while the adjacent right column (e.g. an image) bleeds to the viewport edge.
+ */
+.section-split-left {
+  padding-left: var(--container-padding-sm);
+  padding-right: var(--container-padding-sm);
+}
+
+@media (min-width: 768px) {
+  .section-split-left {
+    padding-left: var(--container-padding-md);
+    padding-right: var(--container-padding-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-split-left {
+    padding-left: max(
+      var(--container-padding-md),
+      calc((100vw - var(--container-max)) / 2 + var(--container-padding-md))
+    );
+    padding-right: 3rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .section-split-left {
+    padding-left: max(
+      var(--container-padding-lg),
+      calc((100vw - var(--container-max)) / 2 + var(--container-padding-lg))
+    );
     padding-right: 5rem;
   }
+}
+
+/*
+ * Scroll-reveal animations
+ * Elements with [data-reveal] start invisible and translate up,
+ * then animate in when .revealed is added by IntersectionObserver.
+ */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+[data-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children with data-reveal-delay */
+[data-reveal][data-reveal-delay="1"] { transition-delay: 0.1s; }
+[data-reveal][data-reveal-delay="2"] { transition-delay: 0.2s; }
+[data-reveal][data-reveal-delay="3"] { transition-delay: 0.3s; }
+[data-reveal][data-reveal-delay="4"] { transition-delay: 0.4s; }
+
+/* Ramadan star pulse */
+@keyframes starPulse {
+  0%, 100% { opacity: var(--tw-opacity, 0.15); transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.4); }
 }

@@ -11,9 +11,9 @@ export default function HomePage() {
     <>
       <AboutICV />
       <Ramadan2026 />
-      <AboutSection />
       <IslamophobiaSupport />
       <ServicesGrid />
+      <AboutSection />
       <NewsResources />
       <PrayerTimes />
     </>

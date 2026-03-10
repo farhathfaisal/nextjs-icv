@@ -1,18 +1,41 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { ShieldCheck, BookOpen, Scale, Phone } from "lucide-react";
 
-const quickLinks = [
-  { label: "Support Services", href: "/islamophobia-support/services" },
-  { label: "Know Your Rights", href: "/islamophobia-support/resources" },
-  { label: "Hate Laws", href: "/hate-laws" },
-  { label: "Call 1800 123 456", href: "tel:1800123456" },
+const supportPaths = [
+  {
+    title: "Support Services",
+    description: "Statewide register of services available to you.",
+    href: "/islamophobia-support/services",
+    icon: ShieldCheck,
+  },
+  {
+    title: "Know Your Rights",
+    description: "Guides, FAQs, and information on your legal protections.",
+    href: "/islamophobia-support/resources",
+    icon: BookOpen,
+  },
+  {
+    title: "Hate Laws",
+    description: "Understanding hate crime legislation in Victoria.",
+    href: "/hate-laws",
+    icon: Scale,
+  },
+  {
+    title: "Call 1800 123 456",
+    description: "Speak directly with our support team.",
+    href: "tel:1800123456",
+    icon: Phone,
+  },
 ];
 
 export default function IslamophobiaSupport() {
   const [modalOpen, setModalOpen] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
+  const revealRef = useScrollReveal<HTMLElement>();
 
   useEffect(() => {
     const dialog = dialogRef.current;
@@ -31,50 +54,50 @@ export default function IslamophobiaSupport() {
 
   return (
     <>
-      <section className="w-full bg-iso-bg">
-        <div className="section-full py-6 md:py-8 flex flex-col md:flex-row md:items-center gap-6 md:gap-12">
-          {/* Content */}
-          <div className="flex-1 min-w-0">
-            <h2 className="text-xl md:text-2xl font-bold text-iso-text mb-2 leading-tight">
-              Islamophobia Support
-            </h2>
-            <p className="text-base text-iso-text-muted max-w-lg leading-relaxed">
-              If you or someone you know has experienced Islamophobia, ICV is
-              here to help. Report incidents, access support, and know your
-              rights.
-            </p>
-          </div>
-
-          {/* Links & CTA */}
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-3 shrink-0">
-            {quickLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="text-sm font-semibold text-iso-accent-dark hover:text-iso-highlight transition-colors inline-flex items-center gap-1"
-              >
-                {link.label}
-                <svg
-                  className="w-3 h-3"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2.5}
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </a>
-            ))}
+      <section ref={revealRef} className="w-full bg-white border-b border-gray-200">
+        <div className="section-full py-14 md:py-20">
+          {/* Header row */}
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10" data-reveal>
+            <div>
+              <h2 className="text-2xl md:text-3xl font-medium text-black leading-tight">
+                Islamophobia Support
+              </h2>
+              <p className="text-lg text-zinc-500 max-w-xl mt-2 leading-relaxed">
+                If you or someone you know has experienced Islamophobia, ICV is
+                here to help. Report incidents, access support, and know your
+                rights.
+              </p>
+            </div>
             <button
               onClick={() => setModalOpen(true)}
-              className="py-2.5 px-7 bg-iso-accent-dark text-white text-sm font-bold rounded shadow-sm hover:bg-iso-accent transition-colors"
+              className="shrink-0 py-3.5 px-7 bg-[var(--accent)] text-white text-base font-medium hover:brightness-110 transition-colors"
             >
               Report an Incident
             </button>
+          </div>
+
+          {/* Support pathway cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {supportPaths.map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <a
+                  key={item.title}
+                  href={item.href}
+                  data-reveal
+                  data-reveal-delay={Math.min(i + 1, 4)}
+                  className="group flex flex-col gap-3 border border-gray-200 bg-gray-50 p-6 transition-all duration-200 ease-out will-change-[background-color] hover:bg-gray-100"
+                >
+                  <Icon className="w-5 h-5 text-zinc-500" />
+                  <h3 className="text-base font-medium text-black group-hover:underline">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-zinc-400 leading-relaxed">
+                    {item.description}
+                  </p>
+                </a>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -83,21 +106,21 @@ export default function IslamophobiaSupport() {
       <dialog
         ref={dialogRef}
         onClose={closeModal}
-        className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-xl rounded bg-white p-0 backdrop:bg-black/50"
+        className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-xl bg-white p-0 backdrop:bg-black/50"
       >
         <div className="px-8 py-8 md:px-10 md:py-10">
           <div className="flex items-start justify-between mb-6">
             <div>
-              <h3 className="text-xl font-semibold text-heading">
+              <h3 className="text-xl font-medium text-black">
                 Report an Incident
               </h3>
-              <p className="text-sm text-foreground/40 mt-1">
+              <p className="text-sm text-zinc-400 mt-1">
                 Your information is treated with strict confidentiality.
               </p>
             </div>
             <button
               onClick={closeModal}
-              className="text-gray-400 hover:text-gray-600 transition-colors p-1 -mr-1 -mt-1"
+              className="text-zinc-400 hover:text-zinc-600 transition-colors p-1 -mr-1 -mt-1"
               aria-label="Close"
             >
               <svg
@@ -118,9 +141,9 @@ export default function IslamophobiaSupport() {
 
           {formSubmitted ? (
             <div className="flex items-center gap-4 py-6">
-              <div className="w-12 h-12 rounded-full border-2 border-iso-accent flex items-center justify-center shrink-0">
+              <div className="w-12 h-12 border-2 border-black flex items-center justify-center shrink-0">
                 <svg
-                  className="w-6 h-6 text-iso-accent"
+                  className="w-6 h-6 text-black"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -134,10 +157,10 @@ export default function IslamophobiaSupport() {
                 </svg>
               </div>
               <div>
-                <p className="text-lg font-semibold text-heading">
+                <p className="text-lg font-medium text-black">
                   Report Submitted
                 </p>
-                <p className="text-base text-foreground/50">
+                <p className="text-base text-zinc-500">
                   Our team will be in touch shortly.
                 </p>
               </div>
@@ -152,65 +175,65 @@ export default function IslamophobiaSupport() {
             >
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-semibold text-heading mb-2">
-                    First Name<span className="text-iso-accent">*</span>
+                  <label className="block text-sm font-medium text-black mb-2">
+                    First Name<span className="text-black">*</span>
                   </label>
                   <input
                     type="text"
                     placeholder="John"
                     required
-                    className="w-full px-0 pb-2 text-base text-gray-900 placeholder:text-gray-300 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:border-iso-accent transition-colors"
+                    className="w-full px-0 pb-2 text-base text-zinc-900 placeholder:text-zinc-300 bg-transparent border-0 border-b-2 border-zinc-300 focus:outline-none focus:border-black transition-colors"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-heading mb-2">
-                    Last Name<span className="text-iso-accent">*</span>
+                  <label className="block text-sm font-medium text-black mb-2">
+                    Last Name<span className="text-black">*</span>
                   </label>
                   <input
                     type="text"
                     placeholder="Smith"
                     required
-                    className="w-full px-0 pb-2 text-base text-gray-900 placeholder:text-gray-300 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:border-iso-accent transition-colors"
+                    className="w-full px-0 pb-2 text-base text-zinc-900 placeholder:text-zinc-300 bg-transparent border-0 border-b-2 border-zinc-300 focus:outline-none focus:border-black transition-colors"
                   />
                 </div>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-semibold text-heading mb-2">
-                    Email Address<span className="text-iso-accent">*</span>
+                  <label className="block text-sm font-medium text-black mb-2">
+                    Email Address<span className="text-black">*</span>
                   </label>
                   <input
                     type="email"
                     placeholder="john.smith@example.com"
                     required
-                    className="w-full px-0 pb-2 text-base text-gray-900 placeholder:text-gray-300 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:border-iso-accent transition-colors"
+                    className="w-full px-0 pb-2 text-base text-zinc-900 placeholder:text-zinc-300 bg-transparent border-0 border-b-2 border-zinc-300 focus:outline-none focus:border-black transition-colors"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-heading mb-2">
-                    Mobile Number<span className="text-iso-accent">*</span>
+                  <label className="block text-sm font-medium text-black mb-2">
+                    Mobile Number<span className="text-black">*</span>
                   </label>
                   <input
                     type="tel"
                     placeholder="0412 345 678"
                     required
-                    className="w-full px-0 pb-2 text-base text-gray-900 placeholder:text-gray-300 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:border-iso-accent transition-colors"
+                    className="w-full px-0 pb-2 text-base text-zinc-900 placeholder:text-zinc-300 bg-transparent border-0 border-b-2 border-zinc-300 focus:outline-none focus:border-black transition-colors"
                   />
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-semibold text-heading mb-2">
+                <label className="block text-sm font-medium text-black mb-2">
                   Describe the Incident
                 </label>
                 <textarea
                   rows={3}
                   placeholder="Tell us what happened, where, and when..."
-                  className="w-full px-0 pb-2 text-base text-gray-900 placeholder:text-gray-300 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:border-iso-accent resize-none transition-colors"
+                  className="w-full px-0 pb-2 text-base text-zinc-900 placeholder:text-zinc-300 bg-transparent border-0 border-b-2 border-zinc-300 focus:outline-none focus:border-black resize-none transition-colors"
                 />
               </div>
               <button
                 type="submit"
-                className="w-fit py-3 px-8 bg-iso-accent-dark hover:bg-iso-accent text-white text-base font-bold rounded transition-colors"
+                className="w-fit py-3 px-8 bg-black hover:bg-zinc-800 text-white text-base font-medium transition-colors"
               >
                 Submit Report
               </button>

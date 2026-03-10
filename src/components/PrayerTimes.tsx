@@ -181,12 +181,12 @@ export default function PrayerTimes() {
 
   return (
     <section className="w-full bg-icv-charcoal">
-      <div className="section-full py-16 md:py-20">
+      <div className="section-full py-20 md:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-12">
           {/* Prayer Times Table */}
           <div className="min-w-0">
             <div className="flex items-baseline gap-4 mb-1">
-              <h2 className="text-3xl md:text-4xl font-bold text-white">
+              <h2 className="text-3xl md:text-4xl font-medium text-white">
                 Prayer Times
               </h2>
               <span className="text-base text-white/40">Melbourne, VIC</span>
@@ -196,16 +196,16 @@ export default function PrayerTimes() {
             </p>
 
             {loading ? (
-              <div className="rounded border border-white/10 bg-white/5 p-12 text-center text-white/40">
+              <div className="border border-white/10 bg-white/5 p-12 text-center text-white/40">
                 Loading prayer times&hellip;
               </div>
             ) : rows.length === 0 ? (
-              <div className="rounded border border-white/10 bg-white/5 p-12 text-center text-white/40">
+              <div className="border border-white/10 bg-white/5 p-12 text-center text-white/40">
                 Unable to load prayer times. Please try again later.
               </div>
             ) : (
-              <div className="overflow-x-auto overflow-y-auto max-h-[480px] rounded border border-white/10">
-                <table className="w-full text-sm">
+              <div className="overflow-x-auto overflow-y-auto max-h-[480px] border border-white/10">
+                <table className="w-full text-sm md:text-base">
                   <thead className="sticky top-0 z-20">
                     <tr className="bg-icv-charcoal text-white/50 text-left">
                       <th className="px-4 py-3 font-medium whitespace-nowrap sticky left-0 bg-icv-charcoal z-30 border-r border-white/10">
@@ -227,7 +227,7 @@ export default function PrayerTimes() {
                         key={row.dateKey}
                         className={`border-t border-white/5 transition-colors ${
                           row.isToday
-                            ? "bg-icv-green/15"
+                            ? "bg-white/10"
                             : row.isFriday
                             ? "bg-white/[0.03]"
                             : ""
@@ -236,7 +236,7 @@ export default function PrayerTimes() {
                         <td
                           className={`px-4 py-3 whitespace-nowrap sticky left-0 z-10 border-r border-white/10 ${
                             row.isToday
-                              ? "bg-icv-green/15"
+                              ? "bg-white/10"
                               : row.isFriday
                               ? "bg-[#2d2d2d]"
                               : "bg-icv-charcoal"
@@ -244,13 +244,13 @@ export default function PrayerTimes() {
                         >
                           <div className="flex items-center gap-2">
                             {row.isToday && (
-                              <span className="inline-block w-2 h-2 rounded-full bg-icv-green shrink-0" />
+                              <span className="inline-block w-2 h-2 rounded-full bg-white shrink-0" />
                             )}
                             <div>
                               <span
                                 className={`block font-medium ${
                                   row.isToday
-                                    ? "text-icv-green-light"
+                                    ? "text-white"
                                     : row.isFriday
                                     ? "text-white"
                                     : "text-white/80"
@@ -258,12 +258,12 @@ export default function PrayerTimes() {
                               >
                                 {row.date}
                                 {row.isFriday && (
-                                  <span className="ml-2 text-[10px] uppercase tracking-wider text-icv-green-light/60 font-semibold">
+                                  <span className="ml-2 text-[10px] uppercase tracking-wider text-white/50 font-medium">
                                     Jumu&apos;ah
                                   </span>
                                 )}
                               </span>
-                              <span className="block text-[11px] text-white/25 mt-0.5">
+                              <span className="block text-xs text-white/25 mt-0.5">
                                 {row.hijri}
                               </span>
                             </div>
@@ -276,7 +276,7 @@ export default function PrayerTimes() {
                               key={name}
                               className={`px-4 py-3 text-center whitespace-nowrap tabular-nums ${
                                 isNext
-                                  ? "bg-icv-green text-white font-bold"
+                                  ? "bg-white/20 text-white font-medium"
                                   : row.isToday
                                   ? "text-white font-medium"
                                   : "text-white/60"
@@ -301,19 +301,19 @@ export default function PrayerTimes() {
 
           {/* Jummah Times */}
           <div>
-            <h3 className="text-2xl font-bold text-white mb-8">
+            <h3 className="text-2xl md:text-3xl font-medium text-white mb-8">
               Jummah Times
             </h3>
             <div className="flex flex-col gap-4">
               {jummahTimes.map((jummah) => (
                 <div
                   key={jummah.mosque}
-                  className="flex items-center justify-between p-5 rounded border border-white/10 bg-white/5"
+                  className="flex items-center justify-between p-5 border border-white/10 bg-white/5"
                 >
                   <span className="text-base font-medium text-white">
                     {jummah.mosque}
                   </span>
-                  <span className="text-base font-bold text-icv-green-light">
+                  <span className="text-base font-medium text-white">
                     {jummah.time}
                   </span>
                 </div>
@@ -321,7 +321,7 @@ export default function PrayerTimes() {
             </div>
             <a
               href="/mosque-finder"
-              className="inline-flex items-center gap-2 text-base text-icv-green-light hover:text-icv-green mt-6 transition-colors font-medium"
+              className="inline-flex items-center gap-2 text-base text-white/60 hover:text-white mt-6 transition-colors font-medium"
             >
               Find more mosques
               <svg

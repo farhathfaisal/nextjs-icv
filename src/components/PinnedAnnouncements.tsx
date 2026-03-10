@@ -31,16 +31,16 @@ export default function PinnedAnnouncements() {
               className="flex items-start gap-4 group"
             >
               {item.urgent ? (
-                <span className="shrink-0 mt-1 inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-red-50 border border-red-200 text-red-700 text-xs font-semibold rounded uppercase tracking-wide">
+                <span className="shrink-0 mt-1 inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-red-50 border border-red-200 text-red-700 text-xs font-medium uppercase tracking-wide">
                   Urgent
                 </span>
               ) : (
-                <span className="shrink-0 mt-1 inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-gray-100 border border-gray-200 text-gray-600 text-xs font-semibold rounded uppercase tracking-wide">
+                <span className="shrink-0 mt-1 inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-gray-100 border border-gray-200 text-gray-600 text-xs font-medium uppercase tracking-wide">
                   Notice
                 </span>
               )}
               <div className="min-w-0">
-                <span className="text-base font-semibold text-heading group-hover:text-icv-green-dark transition-colors">
+                <span className="text-base font-medium text-heading group-hover:text-icv-green-dark transition-colors">
                   {item.title}
                 </span>
                 <span className="text-base text-foreground/60 ml-2 hidden sm:inline">
